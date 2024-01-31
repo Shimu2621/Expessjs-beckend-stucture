@@ -6,13 +6,13 @@ const { notFoundHandler, globalErrorHandler } = require("./errors");
 const middleware = require('./middleware');
 const connectDB = require("../db/connectDb");
 
-// creates express application
+// create app and call express application
 const app = express();
 
 // db connection
 connectDB()
 
-//routes
+//get all routes and use app.use()method 
 app.use(middleware)
 app.use(appRoutes)
 app.use(notFoundHandler)
